@@ -2,10 +2,38 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
+    <link rel="stylesheet" href="index.css" />
+    <script src="index.js" defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello World</title>
+    <title>BuscaCEP | Consulta de endereço</title>
   </head>
   <body>
-    <h1>Hello World</h1>
-  </body>
+    <main role ="main">
+      <p class="eyebrow">BuscaCEP</p>
+      <h1>Encontre um endereço pelo CEP.</h1>
+      <p class="intro">Digite um CEP brasileiro para consultar rua, bairro, cidade e estado em poucos segundos.</p>
+
+      <form class="search-panel" id="cep-form">
+        <div>
+          <label for="cep">CEP</label>
+          <input id="cep" name="cep" inputmode="numeric" autocomplete="postal-code" maxlength="9" placeholder="00000-000" required />
+        </div>
+        <button type="submit" id="submit-button">Consultar CEP</button>
+      </form>
+
+      <p id="" role="status" aria-live="polite"></p>
+
+      <section class="result" id="result" aria-labelledby="result-title">
+        <h2 id="result-title">Endereço encontrado</h2>
+        <dl class="address-grid">
+          <div><dt>Logradouro</dt><dd id="logradouro">-</dd></div>
+          <div><dt>Bairro</dt><dd id="bairro">-</dd></div>
+          <div><dt>Cidade</dt><dd id="localidade">-</dd></div>
+          <div><dt>Estado</dt><dd id="uf">-</dd></div>
+          <div><dt>Complemento</dt><dd id="complemento">-</dd></div>
+          <div><dt>CEP</dt><dd id="cep-result">-</dd></div>
+        </dl>
+      </section>
+    </main>
+  </body>status
 </html>
